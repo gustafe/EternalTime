@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>[% meta.page_title %]</title>
+</head>
+<body>
+
+[% USE Markdown -%]
+[% FILTER markdown %]
+
+[% INCLUDE about.md %]
+
+[% END %]
+
+</body>
+
