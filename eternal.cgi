@@ -45,8 +45,8 @@ my $beats = sprintf( "%d",(strftime( "%M", @utc_plus_one) * 60  + ( strftime("%H
 
 
 charset('utf-8');
-print header();
-print start_html(
+say header();
+say start_html(
     -title => "ETERNAL",
     -lang  => 'en-US',
      -head  => [
@@ -63,27 +63,27 @@ print start_html(
  ]
 );
 
-print "<center>";
-print h1("e t e r n a l");
+say "<center>";
+say h1("𝖊 𝖙 𝖊 𝖗 𝖓 𝖆 𝖑");
 
-print p({-style=>"color:red; text-align:center"}, "test input epoch=$now") if $test;
+say p({-style=>"color:red; text-align:center"}, "test input epoch=$now") if $test;
 
-print h2( "The date is");
+say h2( "The date is");
 # normal
-print h1(strftime("%A, %e %B %Y\n", @t));
+say h1(strftime("%A, %e %B %Y\n", @t));
 # eternal March
-print h1("$weekday, $march_day March 2020");
+say h1("$weekday, $march_day March 2020");
 # eternal September
-print h1("$weekday, $sep_day September 1993");
+say h1("$weekday, $sep_day September 1993");
 # French Revolutionary 
-print h1($frc->strftime("%A, %d %B %EY (%EJ)"));
+say h1($frc->strftime("%A, %d %B %EY (%EJ)"));
 
 
-print h2("The time is");
-print h1(strftime("%H:%M:%S UTC",@t));
-print h1($frc->strftime("%H:%M:%S"));
-print h1('@'.	 $beats);
+say h2("The time is");
+say h1(strftime("%H:%M:%S UTC",@t));
+say h1($frc->strftime("%H:%M:%S"));
+say h1('@'.	 $beats);
 
-print p(a({-href=>"http://gerikson.com/eternal/about.html"},"about"));
-print "</center>";
-print end_html();
+say p(a({-href=>"http://gerikson.com/eternal/about.html"},"about"));
+say "</center>";
+say end_html();
