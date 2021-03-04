@@ -35,48 +35,29 @@ if ($test) {
 else {
     $now = time;
 }
-
-my @t   = gmtime($now);
 my $frc = DateTime::Calendar::FrenchRevolutionary->from_epoch(
     epoch => ( $now + 9 * 60 + 21 ) );
 my $dt = DateTime->from_epoch( epoch => $now );
-my $weekday = strftime( "%A", @t );
-my $march_day = commify(
-    int(1 + 0.5 + (
-            (         str2time( strftime( "%Y-%m-%d 3:00", @t ) )
-                    - str2time("2020-03-01 3:00")
-            ) / ( 60 * 60 * 24 )
-        )
-    )
-);
-my $sep_day = commify(
-    int(1 + 0.5 + (
-            (         str2time( strftime( "%Y-%m-%d 3:00", @t ) )
-                    - str2time("1993-09-01 3:00")
-            ) / ( 60 * 60 * 24 )
-        )
-    )
-);
+my $weekday = $dt->day_name;    # strftime( "%A", @t );
+my $mar1      = DateTime->new( year => 2020, month => 3, day => 1 );
+my $sep1      = DateTime->new( year => 1993, month => 9, day => 1 );
+my $march_day = commify( int( 1 + ( $dt->jd - $mar1->jd ) ) );
+my $sep_day   = commify( int( 1 + ( $dt->jd - $sep1->jd ) ) );
 
+my $bmt = DateTime->from_epoch( epoch => $now, time_zone => "+0100" );
 my @utc_plus_one = gmtime( $now + 3600 );
-
-my $beats = sprintf(
-    "%d",
-    (   strftime( "%M", @utc_plus_one ) * 60
-            + ( strftime( "%H", @utc_plus_one ) * 3600 )
-    ) / 86.4
-);
-my %data = (
-    meta     => { page_title => 'e t e r n a l' },
+my $beats        = int( ( $bmt->hour * 3600 + $bmt->minute * 60 ) / 86.4 );
+my %data         = (
+    meta     => { page_title => '𝖊 𝖙 𝖊 𝖗 𝖓 𝖆 𝖑' },
     calendar => {
-        gregorian => strftime( "%A, %e %B %Y\n", @t ),
+        gregorian => $dt->strftime("%A, %e %B %Y"),
         march     => "$weekday, $march_day March 2020",
         september => "$weekday, $sep_day September 1993",
-		 fr_rev    => $frc->strftime("%A, %d %B %EY (%EJ)"),
-		 julian => $dt->jd,
+        fr_rev    => $frc->strftime("%A, %d %B %EY (%EJ)"),
+        julian    => $dt->jd,
     },
     time => {
-        utc    => strftime( "%H:%M:%S UTC", @t ),
+        utc    => $dt->strftime("%H:%M:%S UTC"),
         fr_rev => $frc->strftime("%H:%M:%S"),
         beats  => $beats
     },

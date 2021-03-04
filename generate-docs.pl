@@ -14,7 +14,7 @@ my $dt_now
 
 my %data = (
     meta => {
-        page_title    => 'a b o u t  e t e r n a l',
+        page_title    => '𝖆 𝖇 𝖔 𝖚 𝖙',
         generate_time => $dt_now->strftime('%Y-%m-%d %H:%M:%S%z'),
     }
 );

@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
-
+<h1 style="text-align:center">[% meta.page_title %]</h1>
 [% USE Markdown -%]
 [% FILTER markdown %]
 

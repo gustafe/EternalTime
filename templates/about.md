@@ -1,5 +1,3 @@
-<h1 style="text-align:center">𝖆 𝖇 𝖔 𝖚 𝖙</h1>
-
 [Dates and times in some calendars](http://gerikson.com/cgi-bin/eternal.cgi)
 
 ## Dates
@@ -26,3 +24,5 @@
 * add coloring for "Sundays"
 * add Julian Date
 * add TAI time(?)
+
+[blame - praise - questions](https://twitter.com/gerikson)

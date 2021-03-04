@@ -14,6 +14,6 @@ test:
 deploy-test:
 	curl -s http://gerikson.com/cgi-bin/eternal.cgi | lynx -stdin -dump >> test
 
-about.html: about.md $(TEMPLATES)/about.tt
+about.html: $(TEMPLATES)/about.md $(TEMPLATES)/about.tt
 	perl $(BIN)/generate-docs.pl
 
