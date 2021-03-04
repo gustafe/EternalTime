@@ -1,0 +1,27 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>[% meta.page_title%]</title>
+</head>
+
+<body>
+<center>
+<h1>𝖊 𝖙 𝖊 𝖗 𝖓 𝖆 𝖑</h1>
+<h2>The date is</h2>
+<h1>[% calendar.gregorian %]</h1>
+<h1>[% calendar.march %]</h1>
+<h1>[% calendar.september %]</h1>
+<h1>[% calendar.fr_rev %]</h1>
+
+<h2>The time is</h2>
+<h1>[% time.utc %]</h1>
+<h1>[% time.fr_rev %]</h1>
+<h1>@[% time.beats %]</h1>
+
+<p><a href="http://gerikson.com/eternal/about.html">about</a></p>
+</center>
+</body>
+</html>
