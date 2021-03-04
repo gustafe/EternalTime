@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 <title>[% meta.page_title %]</title>
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
 

@@ -1,6 +1,9 @@
 #! /usr/bin/env perl
 use Modern::Perl '2015';
 ###
+use utf8;
+use warnings  qw(FATAL utf8);    # fatalize encoding glitches
+use open      qw(:std :utf8);    # undeclared streams in UTF-8
 use DateTime;
 use Template;
 #use HNLOlib qw/$feeds/;
@@ -14,7 +17,7 @@ my %data= (meta => { page_title=>'a b o u t  e t e r n a l',
 		 });
 
 my $tt =
-  Template->new( { INCLUDE_PATH => '/home/gustaf/prj/EternalTime' } );
+  Template->new( {ENCODING=>'UTF-8', INCLUDE_PATH => '/home/gustaf/prj/EternalTime' } );
 
 $tt->process(
     'about.tt', \%data,
