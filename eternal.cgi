@@ -39,7 +39,7 @@ else {
 my @t   = gmtime($now);
 my $frc = DateTime::Calendar::FrenchRevolutionary->from_epoch(
     epoch => ( $now + 9 * 60 + 21 ) );
-
+my $dt = DateTime->from_epoch( epoch => $now );
 my $weekday = strftime( "%A", @t );
 my $march_day = commify(
     int(1 + 0.5 + (
@@ -67,12 +67,13 @@ my $beats = sprintf(
     ) / 86.4
 );
 my %data = (
-    meta     => { page_title => 'ETERNAL' },
+    meta     => { page_title => 'e t e r n a l' },
     calendar => {
         gregorian => strftime( "%A, %e %B %Y\n", @t ),
         march     => "$weekday, $march_day March 2020",
         september => "$weekday, $sep_day September 1993",
-        fr_rev    => $frc->strftime("%A, %d %B %EY (%EJ)")
+		 fr_rev    => $frc->strftime("%A, %d %B %EY (%EJ)"),
+		 julian => $dt->jd,
     },
     time => {
         utc    => strftime( "%H:%M:%S UTC", @t ),
