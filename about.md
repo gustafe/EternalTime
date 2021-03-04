@@ -1,4 +1,6 @@
-# a b o u t 
+<h1 style="text-align:center">𝖆 𝖇 𝖔 𝖚 𝖙</h1>
+
+[Dates and times in some calendars](http://gerikson.com/cgi-bin/eternal.cgi)
 
 ## Dates
 
@@ -18,3 +20,9 @@
 * [Double March](https://www.jwz.org/blog/2021/03/double-march/)
 * [DateTime::Calendar::FrenchRevolutionary - Dates in the French Revolutionary Calendar](https://metacpan.org/pod/DateTime::Calendar::FrenchRevolutionary)
 * [Swatch Internet Time](https://en.wikipedia.org/wiki/Swatch_Internet_Time)
+
+## TODO
+
+* add coloring for "Sundays"
+* add Julian Date
+* add TAI time(?)
