@@ -11,6 +11,7 @@
 <center>
 <h1>[% meta.page_title%]</h1>
 <h2>The date is</h2>
+<h1>[% calendar.weekday %]</h1>
 <h1>[% calendar.gregorian %]</h1>
 <h1>[% calendar.march %]</h1>
 <h1>[% calendar.september %]</h1>
