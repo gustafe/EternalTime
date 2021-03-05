@@ -1,1 +1,1 @@
-[% console.wd %][% console.greg %] | [% console.mar %] | [% console.sep %] | [% console.frc %]  
+[% console.wd %][% console.gregorian %] | [% console.march %] | [% console.september %] | [% console.fr_rev %]  

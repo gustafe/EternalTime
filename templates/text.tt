@@ -1,0 +1,4 @@
+           Gregorian:    [% strings.iso8601.gregorian %]       [% strings.rfc822.gregorian %]       [% strings.american.gregorian %]
+       Eternal March:   [% strings.iso8601.march %]      [% strings.rfc822.march %]      [% strings.american.march %]
+   Eternal September: [% strings.iso8601.september %]    [% strings.rfc822.september %]    [% strings.american.september %]
+French Revolutionary:    [% strings.iso8601.fr_rev %]       [% strings.rfc822.fr_rev %]       [% strings.american.fr_rev %]

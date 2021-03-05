@@ -5,7 +5,7 @@ CGI=$(HOME)/cgi-bin
 
 deploy: eternal.cgi $(TEMPLATES)/*.tt
 	cp $(BIN)/eternal.cgi $(CGI)/eternal.cgi
-	cp $(TEMPLATES)/*.tt $(CGI)/templates
+	cp $(TEMPLATES)/* $(CGI)/templates
 
 .PHONY: test
 test: 
@@ -16,4 +16,4 @@ deploy-test:
 
 about.html: $(TEMPLATES)/about.md $(TEMPLATES)/about.tt
 	perl $(BIN)/generate-docs.pl
-
+	cp $(TEMPLATES)/* $(CGI)/templates
