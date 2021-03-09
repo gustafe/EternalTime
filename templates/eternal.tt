@@ -5,6 +5,11 @@
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>[% meta.page_title%]</title>
+
+  <style>
+    body {font-family: Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;}
+    h2 {font-style: italic; }
+  </style>
 </head>
 
 <body>
@@ -15,7 +20,7 @@
 <h1>[% calendar.gregorian %]</h1>
 <h1>[% calendar.march %]</h1>
 <h1>[% calendar.september %]</h1>
-<h1 [% IF calendar.dow == 10 %] style="color: red" [% END %]>[% calendar.fr_rev %]</h1>
+<h1><span[% IF calendar.dow == 10 %] style="color: red"[% END %]>[% calendar.fr_rev_day_name%]<span>, [% calendar.fr_rev_date %]</h1>
 <h2>The time is</h2>
 <h1>[% time.utc %]</h1>
 <h1>[% time.fr_rev %]</h1>

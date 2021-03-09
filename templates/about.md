@@ -21,7 +21,7 @@
 
 ## TODO
 
-* add coloring for "Sundays"
+* <strike>add coloring for "Sundays"</strike>
 * add Julian Date
 * add TAI time(?)
 

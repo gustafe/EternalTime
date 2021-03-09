@@ -4,6 +4,9 @@
 <title>[% meta.page_title %]</title>
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style>
+    body {font-family: Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;}
+  </style>
 </head>
 <body>
 <h1 style="text-align:center">[% meta.page_title %]</h1>
