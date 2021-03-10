@@ -63,7 +63,7 @@ my %data = (
         dow       => $dt->dow(),
     },
     time => {
-        utc    => $dt->strftime("%H:%M:%S UTC"),
+        utc    => $dt->strftime("%H:%M:%S"),
         fr_rev => $frc->strftime("%H:%M:%S"),
         beats  => $beats,
     },

@@ -10,9 +10,37 @@
     body {font-family: Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;}
     h2 {font-style: italic; }
   </style>
+  <script>
+  function startTime() {
+  var today = new Date();
+  var h = today.getUTCHours();
+  var m = today.getUTCMinutes();
+  var s = today.getUTCSeconds();
+
+  var fr_sec = (3600 * h + 60 * (m+9) + s + 21)/0.864;
+  var fr_h = parseInt(fr_sec/(100*100));
+  var fr_m = checkTime(parseInt((fr_sec/100)%100));
+  var fr_s = checkTime(parseInt((fr_sec%100)));
+
+  var beat_sec = ( 3600 * ( h + 1) + 60 * m + s );
+  var beats = parseInt( beat_sec/86.4) % 1000;
+  m = checkTime(m);
+  s = checkTime(s);
+
+  document.getElementById('utcclock').innerHTML =h + ":" + m + ":" + s;
+  document.getElementById('decimal').innerHTML= fr_h +":" + fr_m + ":" + fr_s;
+  document.getElementById('beats').innerHTML = beats;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+  </script>
+
 </head>
 
-<body>
+<body onload="startTime()">
 <center>
 <h1>[% meta.page_title%]</h1>
 <h2>The date is</h2>
@@ -22,9 +50,9 @@
 <h1>[% calendar.september %]</h1>
 <h1><span[% IF calendar.dow == 10 %] style="color: red"[% END %]>[% calendar.fr_rev_day_name%]<span>, [% calendar.fr_rev_date %]</h1>
 <h2>The time is</h2>
-<h1>[% time.utc %]</h1>
-<h1>[% time.fr_rev %]</h1>
-<h1>@[% time.beats %]</h1>
+<h1><span id="utcclock">[% time.utc %]</span> UTC</h1>
+<h1><span id="decimal">[% time.fr_rev %]</span></h1>
+<h1>@<span id="beats">[% time.beats %]</span></h1>
 
 <p><a href="http://gerikson.com/cgi-bin/eternal.cgi?text=1">txt</a> | <a href="http://gerikson.com/eternal/about.html">about</a></p>
 </center>
