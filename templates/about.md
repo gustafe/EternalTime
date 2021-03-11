@@ -6,6 +6,7 @@
 2. Eternal March - datum is 2020-03-01
 3. Eternal September - datum is 1993-09-01
 4. French Revolutionary
+5. LOL
 
 ## Times
 
@@ -16,6 +17,7 @@
 ## Sources
 
 * [Double March](https://www.jwz.org/blog/2021/03/double-march/)
+* [Never Ending September Date](http://www.df7cb.de/projects/sdate/)
 * [DateTime::Calendar::FrenchRevolutionary - Dates in the French Revolutionary Calendar](https://metacpan.org/pod/DateTime::Calendar::FrenchRevolutionary)
 * [Swatch Internet Time](https://en.wikipedia.org/wiki/Swatch_Internet_Time)
 

@@ -60,7 +60,8 @@ my %data = (
 		 fr_rev_day_name => $frc->strftime("%A"),
         julian    => $dt->jd,
         fr_dod    => $frc->dod(),
-        dow       => $dt->dow(),
+		 dow       => $dt->dow(),
+		 year => $dt->year(),
     },
     time => {
         utc    => $dt->strftime("%H:%M:%S"),
