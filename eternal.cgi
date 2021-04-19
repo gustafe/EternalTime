@@ -40,10 +40,12 @@ my $frc = DateTime::Calendar::FrenchRevolutionary->from_epoch(
 my $dt      = DateTime->from_epoch( epoch => $now );
 my $weekday = $dt->day_name;                           # strftime( "%A", @t );
 my $wd      = $dt->day_abbr;
-my $mar1      = DateTime->new( year => 2020, month => 3, day => 1 );
-my $sep1      = DateTime->new( year => 1993, month => 9, day => 1 );
-my $march_day = int( 1 + ( $dt->jd - $mar1->jd ) );
-my $sep_day   = int( 1 + ( $dt->jd - $sep1->jd ) );
+my $mar1             = DateTime->new( year => 2020, month => 3, day => 1 );
+my $sep1             = DateTime->new( year => 1993, month => 9, day => 1 );
+my $march_day        = int( 1 + ( $dt->jd - $mar1->jd ) );
+my $sep_day          = int( 1 + ( $dt->jd - $sep1->jd ) );
+my $dt_linux_desktop = $dt->clone();
+$dt_linux_desktop->add( months => ( 12 + 3 ) );
 
 # Biel Mean Time, used by Beats, is UTC+1 (no DST)
 my $bmt = DateTime->from_epoch( epoch => $now, time_zone => "+0100" );
@@ -52,16 +54,17 @@ my $beats = int( ( $bmt->hour * 3600 + $bmt->minute * 60 ) / 86.4 );
 my %data = (
     meta     => { page_title => '𝖊 𝖙 𝖊 𝖗 𝖓 𝖆 𝖑' },
     calendar => {
-        gregorian => $dt->strftime("%e %B %Y"),
-        weekday   => $weekday,
-        march     => "$march_day March 2020",
-        september => commify($sep_day) . " September 1993",
-		 fr_rev_date    => $frc->strftime("%d %B %EY (%EJ)"),
-		 fr_rev_day_name => $frc->strftime("%A"),
-        julian    => $dt->jd,
-        fr_dod    => $frc->dod(),
-		 dow       => $dt->dow(),
-		 year => $dt->year(),
+        gregorian          => $dt->strftime("%e %B %Y"),
+        weekday            => $weekday,
+        march              => "$march_day March 2020",
+        september          => commify($sep_day) . " September 1993",
+        fr_rev_date        => $frc->strftime("%d %B %EY (%EJ)"),
+        fr_rev_day_name    => $frc->strftime("%A"),
+        julian             => $dt->jd,
+        fr_dod             => $frc->dod(),
+        dow                => $dt->dow(),
+        year               => $dt->year(),
+        year_linux_desktop => $dt_linux_desktop->year(),
     },
     time => {
         utc    => $dt->strftime("%H:%M:%S"),
@@ -80,7 +83,7 @@ my %data = (
             gregorian => $dt->datetime() . '+00:00',
             march     => "2020-03-$march_day" . 'T' . $dt->hms() . '+00:00',
             september => "1993-09-$sep_day" . 'T' . $dt->hms() . '+00:00',
-            fr_rev    => $frc->ymd().'T '.$frc->hms() . '+00:09',
+            fr_rev    => $frc->ymd() . 'T ' . $frc->hms() . '+00:09',
         },
         rfc822 => {
             gregorian => $dt->strftime("%a, %d %b %Y %H:%M:%S %z"),

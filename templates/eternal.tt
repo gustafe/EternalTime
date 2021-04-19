@@ -49,7 +49,7 @@ function checkTime(i) {
 <h1>[% calendar.march %]</h1>
 <h1>[% calendar.september %]</h1>
 <h1><span[% IF calendar.fr_dod == 10 %] style="color: red"[% END %]>[% calendar.fr_rev_day_name%]</span>, [% calendar.fr_rev_date %]</h1>
-<h1>Year of the Linux desktop: [% calendar.year + 1 %]</h1>
+<h1>Year of the Linux desktop: [% calendar.year_linux_desktop %]</h1>
 <h2>The time is</h2>
 <h1><span id="utcclock">[% time.utc %]</span> UTC</h1>
 <h1><span id="decimal">[% time.fr_rev %]</span></h1>
