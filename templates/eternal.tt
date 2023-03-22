@@ -7,8 +7,12 @@
   <title>[% meta.page_title%]</title>
 
   <style>
-    body {font-family: Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;}
+    body {font-family: Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;
+	background-color: #EEEEEE;
+	 }
+    h1 {  font-variant-numeric: tabular-nums; }
     h2 {font-style: italic; }
+    
   </style>
   <script>
   function startTime() {
@@ -52,7 +56,8 @@ function checkTime(i) {
 <h1>Year of the Linux desktop: [% calendar.year_linux_desktop %]</h1>
 <h2>The time is</h2>
 <h1><span id="utcclock">[% time.utc %]</span> UTC</h1>
-<h1><span id="decimal">[% time.fr_rev %]</span></h1>
+<h1><span id="decimal">[% time.fr_rev %]</span>
+  <abbr title="Temps du Republique">TR</abbr></h1>
 <h1>@<span id="beats">[% time.beats %]</span></h1>
 
 <p><a href="http://gerikson.com/cgi-bin/eternal.cgi?text=1">txt</a> | <a href="http://gerikson.com/eternal/about.html">about</a></p>
