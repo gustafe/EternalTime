@@ -27,4 +27,4 @@
 * add Julian Date
 * add TAI time(?)
 
-[blame - praise - questions](https://twitter.com/gerikson)
+[blame - praise - questions](https://mastodon.social/@gerikson)
